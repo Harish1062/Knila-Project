@@ -1,0 +1,16 @@
+create table dbo.Contact
+(
+	Id Int identity(1,1) not null,
+	Firstname varchar(50),
+	Lastname  varchar(50),
+	Email   varchar(75),
+	PhoneNumber varchar(20),
+	Address  varchar(500),
+	City varchar(100),
+	State varchar(100),
+	Country varchar(100),
+	PostalCode varchar(10)
+)
+
+ALTER TABLE dbo.Contact
+ADD CONSTRAINT PK_cnt_id PRIMARY KEY (ID);
