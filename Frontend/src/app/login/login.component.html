@@ -1,0 +1,34 @@
+<form [formGroup]="loginForm">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" style="width:200px;margin-left: 600px;margin-top:200px" class="form-label">Email address</label>
+      <input formControlName="email" style="width:200px;margin-left: 600px;" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+      <small class="form-text text-muted"  style="width:200px;margin-left: 600px;margin-top:200px"
+      *ngIf="loginForm.controls['email'].touched && loginForm.controls['email'].errors?.['required']">
+        Please enter email address.!
+    </small>
+
+    <small class="form-text text-muted" style="width:200px;margin-left: 600px;margin-top:200px"
+    *ngIf="loginForm.controls['email'].touched && loginForm.controls['email'].errors?.['email']">
+      Email address not well formed.!
+    </small>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" style="width:200px;margin-left: 600px;" class="form-label">Password</label>
+      <input formControlName="password" style="width:200px;margin-left: 600px;" type="password" class="form-control" id="exampleInputPassword1">
+      <small class="form-text text-muted"  style="width:200px;margin-left: 600px;margin-top:200px"
+      *ngIf="loginForm.controls['email'].touched && loginForm.controls['email'].errors?.['required']">
+        Please enter email address.!
+    </small>
+
+    <small class="form-text text-muted"
+    *ngIf="loginForm.controls['email'].touched && loginForm.controls['email'].errors?.['email']">
+      Email address not well formed.!
+    </small>
+    </div>
+    <div class="mb-3 form-check" style="width:200px;margin-left: 600px;">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label  class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit"  style="width:200px;margin-left: 600px;" [disabled]="loginForm.invalid" (click)="OnLogin()"  class="btn btn-primary">Submit</button>
+  </form>
